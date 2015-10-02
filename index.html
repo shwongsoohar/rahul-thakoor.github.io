@@ -1,6 +1,6 @@
 <html>
 <head>
-
+<meta name="viewport" content="width=device-width, height=device-height">
 <script>
 
 var ipValue;
@@ -52,28 +52,42 @@ connection = new WebSocket(ipValue, ['arduino']);
 //console.log(text)
 console.log("IP value changed to:"+ipValue);
 }	
-function sendX(){
+function showX(){
 	window.addEventListener('deviceorientation', function(event) {
 	var xSend=(((event.alpha)*(255/360)).toFixed(0));
 	document.form1.x.value = xSend;	
-	connection.send("x"+xSend);
+	
 	
 	});}
-	
-function sendY(){
+	function sendX(){
+    var x = document.form1.x.value;
+    connection.send("x"+x);    
+        
+    }
+function showY(){
 	window.addEventListener('deviceorientation', function(event) {
 	var ySend=(((event.beta+180)*(255/360)).toFixed(0));
 		document.form1.y.value = ySend;	
 		
-	connection.send("y"+ySend);
 	});}	
-function sendZ(){
+    
+    function sendY(){
+    var y = document.form1.y.value;
+    connection.send("y"+y);    
+        
+    }
+function showZ(){
 	window.addEventListener('deviceorientation', function(event) {
 	var zSend=(((event.gamma+90)*(255/180)).toFixed(0));
 		document.form1.z.value = zSend;	
 		
-	connection.send("z"+zSend);
 	});}
+    
+    function sendZ(){
+    var z = document.form1.z.value;
+    connection.send("z"+z);    
+        
+    }
 function showValueR(newValue)
                 {
                         document.getElementById("outputTextR").innerHTML=newValue;
@@ -97,7 +111,7 @@ function showValueG(newValue)
 </script>
 
 </head>
-<body style="width=100% height=100%">
+<body style="height=100% width=100%">
 RGB SLIDER<p></p>
 <input type="button" onclick="ledFn()">Blink LED	<p><p></p>
 	<input type="button" onclick="resetFn()">Reset LED <p></p>
@@ -108,24 +122,26 @@ RGB SLIDER<p></p>
 </table>
   
 <form name="form1" id="form1">
-	X-axis:<input type="text" name="x">
-	<input type="button" onclick="sendX()"<p>
-    <p />
-    Y-axis:  <input type="text" name="y">
-	<input type="button" onclick="sendY()"<p>
-    <p />
-    Z-axis: <input type="text" name="z">	
-	<input type="button" onclick="sendZ()"<p></form>
+	X-axis:<input type="text" name="x"><p></p>
+	<input type="button" onclick="showX()" >Listen to X-axis value<p></p>
+    <input type="radio" onclick ="sendX()" >Change R value<p></p>
+    Y-axis:  <input type="text" name="y"><p></p>
+	<input type="button" onclick="showY()">Listen to Y-axis value<p>    <p />
+    <input type="radio" onclick ="sendY()" >Change G value<p></p>
+    Z-axis: <input type="text" name="z"><p></p>
+    <input type="button" onclick="showZ()">Listen to Z-axis value<p>
+    <input type="radio" onclick ="sendZ()" >Change B value<p></p>
+    </form>
 	
 	<input type="range" id= "inputSliderR" min="0" max="255" value="0" step="5" oninput="showValueR(this.value)" /> R      
      <br><br><span id="outputTextR">0</span><p></p>
-	<input type="range" id= "inputSliderG" min="0" max="255" value="0" step="5" oninput="showValueG(this.value)" /> G      
+	<input type="range" id= "inputSliderG" min="0" max="255" value="0" step="5" oninput="showValueG(this.value)" />  G     
      <br><br><span id="outputTextG">0</span><p></p>
-	<input type="range" id= "inputSliderB" min="0" max="255" value="0" step="5" oninput="showValueB(this.value)" /> B      
+	<input type="range" id= "inputSliderB" min="0" max="255" value="0" step="5" oninput="showValueB(this.value)" />  B     
      <br><br><span id="outputTextB">0</span><p></p>
-	Author: Rahul
+	
+Author: Rahul
 	Credits: 1.Markus Sattler [https://github.com/Links2004]
 	         2.Martin [http://www.instructables.com/member/martin2250/]
-
 </body>
 </html>
