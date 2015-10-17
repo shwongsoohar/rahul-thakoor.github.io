@@ -1,147 +1,199 @@
+<!DOCTYPE html>
 <html>
-<head> <script type="text/javascript" name="baidu-tc-cerfication" data-appid="6854390" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script></head>
-<metaname="viewport" content="width=device-width, height=device-height"></meta>
-<script>
-
-var ipValue;
-var connection;
-
-connection.onopen = function () {
-	connection.send('Message from Browser to ESP8266 yay its Working!! ' + new Date()); 
-	connection.send('ping');
-	//ws.send("Hello, Ardunio");
-};
-
-connection.onerror = function (error) {
-	console.log('WebSocket Error ', error);
-};
-
-connection.onmessage = function (e) {
-	console.log('Server: ', e.data);
-	
-};
-
-function ledFn() {
-	var toSend = "LED";
-	connection.send(toSend); 
-};
-
-function resetFn() {
-	var toSend = "RESET";
-	connection.send(toSend); 
-};
-	/*window.addEventListener('deviceorientation', function(event) {
-	var xSend=(((event.alpha)*(255/360)).toFixed(0));	
-	var ySend=(((event.beta+180)*(255/360)).toFixed(0));	
-	var zSend=(((event.gamma+90)*(255/180)).toFixed(0));	
-	document.form1.x.value=xSend;	
-    document.form1.y.value=ySend;
-	document.form1.z.value=zSend;
-	
-	function sendY(){
-	connection.send(ySend);
-	}
-	function sendZ(){
-	connection.send(zSend);
-	}
-	});*/
-function mod(){
-var text = document.getElementById('ip').value;
-ipValue = text;	
-connection = new WebSocket(ipValue, ['arduino']); 	
-//console.log(text)
-console.log("IP value changed to:"+ipValue);
-}	
-function showX(){
-	window.addEventListener('deviceorientation', function(event) {
-	var xSend=(((event.alpha)*(255/360)).toFixed(0));
-	document.form1.x.value = xSend;	
-	
-	
-	});}
-	function sendX(){
-    var x = document.form1.x.value;
-    connection.send("x"+x);    
-        
-    }
-function showY(){
-	window.addEventListener('deviceorientation', function(event) {
-	var ySend=(((event.beta+180)*(255/360)).toFixed(0));
-		document.form1.y.value = ySend;	
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html{
+			width: 100%;
+			height: 100%;
+			margin:0;
+			font-family:"微软雅黑";
+			font-size:14px;
+		}
+		#l-map {
+			width:100%; 
+			height:500px;
+			overflow: hidden;
+		}
+		#result{
+			width:100%;
+		}
+		li{
+			line-height:28px;
+		}
 		
-	});}	
-    
-    function sendY(){
-    var y = document.form1.y.value;
-    connection.send("y"+y);    
+		.map_popup {
+			position: absolute;
+			z-index: 200000;
+			width: 382px;
+			height: 344px;
+			right:0px;
+			top:40px;
+		}
+		.map_popup .popup_main { 
+			background:#fff;
+			border: 1px solid #8BA4D8;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+		}
+		.map_popup .title {
+			background: url("http://map.baidu.com/img/popup_title.gif") repeat scroll 0 0 transparent;
+			color: #6688CC;
+			font-weight: bold;
+			height: 24px;
+			line-height: 25px;
+			padding-left: 7px;
+		}
+		.map_popup button {
+			background: url("http://map.baidu.com/img/popup_close.gif") no-repeat scroll 0 0 transparent;
+			cursor: pointer;
+			height: 12px;
+			position: absolute;
+			right: 4px;
+			top: 6px;
+			width: 12px;
+		}	
+       /* form{
         
-    }
-function showZ(){
-	window.addEventListener('deviceorientation', function(event) {
-	var zSend=(((event.gamma+90)*(255/180)).toFixed(0));
-		document.form1.z.value = zSend;	
-		
-	});}
+        visibility: hidden;
+        }*/
     
-    function sendZ(){
-    var z = document.form1.z.value;
-    connection.send("z"+z);    
-        
-    }
-function showValueR(newValue)
-                {
-                        document.getElementById("outputTextR").innerHTML=newValue;
-					   
-                        connection.send("x"+newValue);
-                }	
-	
-function showValueG(newValue)
-                {
-                        document.getElementById("outputTextG").innerHTML=newValue;
-					   
-                        connection.send("y"+newValue);
-                }
-	function showValueB(newValue)
-                {
-                        document.getElementById("outputTextB").innerHTML=newValue;
-					   
-                        connection.send("z"+newValue);
-                }	
-
-</script>
-
-
-<body style="height=100% width=100%">
-RGB SLIDER<p></p>
-<input type="button" onclick="ledFn()">Blink LED	<p><p></p>
-	<input type="button" onclick="resetFn()">Reset LED <p></p>
-	
-<table id="outside">
-    <input type="text"  placeholder="Input the IP of your Websocket server" id="ip" onchange="mod()"> E.g ws://192.168.1.100:81/ </tr>
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GzieZbcFuthYfO2XP3rH0U0k"></script>
+    <script src="js/jquery-1.8.2.min.js"></script>
+	<!-- 加载百度地图样式信息窗口 -->
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+	<!-- 加载城市列表 -->
+	<title>InsulinMate</title>
+</head>
+<body>
     
-</table>
-  
-<form name="form1" id="form1">
-	X-axis:<input type="text" name="x"><p></p>
-	<input type="button" onclick="showX()" >Listen to X-axis value<p></p>
-    <input type="radio" onclick ="sendX()" >Change R value<p></p>
-    Y-axis:  <input type="text" name="y"><p></p>
-	<input type="button" onclick="showY()">Listen to Y-axis value<p>    <p />
-    <input type="radio" onclick ="sendY()" >Change G value<p></p>
-    Z-axis: <input type="text" name="z"><p></p>
-    <input type="button" onclick="showZ()">Listen to Z-axis value<p>
-    <input type="radio" onclick ="sendZ()" >Change B value<p></p>
-    </form>
-	
-	<input type="range" id= "inputSliderR" min="0" max="255" value="0" step="5" oninput="showValueR(this.value)" /> R      
-     <br><br><span id="outputTextR">0</span><p></p>
-	<input type="range" id= "inputSliderG" min="0" max="255" value="0" step="5" oninput="showValueG(this.value)" />  G     
-     <br><br><span id="outputTextG">0</span><p></p>
-	<input type="range" id= "inputSliderB" min="0" max="255" value="0" step="5" oninput="showValueB(this.value)" />  B     
-     <br><br><span id="outputTextB">0</span><p></p>
-	
-Author: Rahul
-	Credits: 1.Markus Sattler [https://github.com/Links2004]
-	         2.Martin [http://www.instructables.com/member/martin2250/]
+    
+	<div id="l-map">
+    </div>
+	<div id="result">
+		<button id="open">View Nearby</button><button id="close">Hide</button>
+	</div>
+   
 </body>
 </html>
+<script type="text/javascript">
+		// 百度地图API功能
+	var map = new BMap.Map("l-map");          // 创建地图实例
+	var point = new BMap.Point(116.403694,39.927552);  // 创建点坐标
+	map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
+	map.enableScrollWheelZoom();
+	map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+    var myGeo = new BMap.Geocoder();
+	var geolocation = new BMap.Geolocation();
+    
+	geolocation.getCurrentPosition(function(r){
+		if(this.getStatus() == BMAP_STATUS_SUCCESS){
+			var mk = new BMap.Marker(r.point);
+            mk.enableDragging();
+            
+           mk.addEventListener("dragend", function(e){    
+            alert("当前位置：" + e.point.lng + ", " + e.point.lat);    
+                    }); 
+      
+      mk.addEventListener("click", function(e){
+          
+          var local = e.point; 
+          var urlPost = 'http://api.map.baidu.com/geodata/v3/poi/create';
+          myGeo.getLocation(local, function(result){      
+                 if (result){ 
+                     alert(result.address); 
+                     var title= prompt("Enter title",'');
+                if(title) {
+
+$.post(urlPost, //Required URL of the page on server
+{ // Data Sending With Request To Server
+title:title,
+geotable_id:'122134',
+ak: 'GzieZbcFuthYfO2XP3rH0U0k', 
+coord_type: '3',    
+latitude:e.point.lat,
+longitude:e.point.lng,
+address:result.address    
+}
+);////
+     
+alert('success');//"response" receives - whatever written in echo of above PHP script.
+
+ 
+                    
+                    }//post ends here
+              else{
+              alert('error');}
+                  }      
+});
+              
+                    
+                     }
+                               );//addevent click ends here
+			map.addOverlay(mk);
+            
+			map.panTo(r.point);
+            map.centerAndZoom(r.point,15);
+            locNow = r.point.lng+','+r.point.lat;
+			alert('您的位置：'+r.point.lng+','+r.point.lat);
+		}
+		else {
+			alert('failed'+this.getStatus());
+		}        
+	},{enableHighAccuracy: true});
+
+    
+    var customLayer;
+	function addCustomLayer(keyword) {
+		if (customLayer) {
+			map.removeTileLayer(customLayer);
+		}
+		customLayer=new BMap.CustomLayer({
+			geotableId: 122134,
+			q: '', //检索关键字
+			tags: '', //空格分隔的多字符串
+			filter: '' //过滤条件,参考http://developer.baidu.com/map/lbs-geosearch.htm#.search.nearby
+		});
+		map.addTileLayer(customLayer);
+		customLayer.addEventListener('hotspotclick',callback);
+	}
+	function callback(e)//单击热点图层
+	{
+			var customPoi = e.customPoi;//poi的默认字段
+			var contentPoi=e.content;//poi的自定义字段
+			var content = '<p style="width:280px;margin:0;line-height:20px;">地址：' + customPoi.address + '<br/>';
+			var searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+				title: customPoi.title, //标题
+				width: 290, //宽度
+				height: 40, //高度
+				panel : "panel", //检索结果面板
+				enableAutoPan : true, //自动平移
+				enableSendToPhone: true, //是否显示发送到手机按钮
+				searchTypes :[
+					BMAPLIB_TAB_SEARCH,   //周边检索
+					BMAPLIB_TAB_TO_HERE,  //到这里去
+					BMAPLIB_TAB_FROM_HERE //从这里出发
+				]
+			});
+			var point = new BMap.Point(customPoi.point.lng, customPoi.point.lat);
+			searchInfoWindow.open(point);
+	}
+	document.getElementById("open").onclick = function(){
+		addCustomLayer();
+	};
+	document.getElementById("open").click();
+	document.getElementById("close").onclick = function(){
+		if (customLayer) {
+			map.removeTileLayer(customLayer);
+		}
+	};
+    
+    
+    
+</script>
