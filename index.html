@@ -99,7 +99,7 @@
             
            mk.addEventListener("dragend", function(e){    
             //alert("当前位置：" + e.point.lng + ", " + e.point.lat);    
-             //       }); 
+                }); 
       
       mk.addEventListener("click", function(e){
           
@@ -123,7 +123,7 @@ address:result.address
 }
 );////
      
-alert('success');//"response" receives - whatever written in echo of above PHP script.
+alert('Location '+title+' successfully uploded to Baidu lbsCloud' );//"response" receives - whatever written in echo of above PHP script.
 
  
                     
@@ -141,7 +141,7 @@ alert('success');//"response" receives - whatever written in echo of above PHP s
 			map.panTo(r.point);
             map.centerAndZoom(r.point,15);
             locNow = r.point.lng+','+r.point.lat;
-			alert('您的位置：'+r.point.lng+','+r.point.lat);
+			//alert('您的位置：'+r.point.lng+','+r.point.lat);
 		}
 		else {
 			alert('failed'+this.getStatus());
