@@ -77,7 +77,7 @@
 	<div id="l-map">
     </div>
 	<div id="result">
-		<button id="open">View Nearby</button><button id="close">Hide</button>
+		<button id="open">View Nearby</button><button id="close">Hide</button><button id="update">Update Locations</button>
 	</div>
    
 </body>
@@ -194,6 +194,12 @@ alert('Location '+title+' successfully uploded to Baidu lbsCloud' );//"response"
 		}
 	};
     
-    
-    
+  document.getElementById("update").onclick = function(){
+  var urlPost = 'http://api.map.baidu.com/geodata/v3/geotable/update';
+      $.post(urlPost,{
+      id:'122134',
+       ak: 'GzieZbcFuthYfO2XP3rH0U0k'     
+      });
+  
+  };//function update ends
 </script>
