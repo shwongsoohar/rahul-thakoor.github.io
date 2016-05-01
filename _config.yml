@@ -12,7 +12,7 @@ safe: true
 
 # edit here to achieve your personal greatness
 url: http://rahul-thakoor.github.io/
-baseurl: http://rahul-thakoor.github.io/
+baseurl: /
 title: Rahul Thakoor
 author: Rahul Thakoor
 description: Personal blog and resume
@@ -21,7 +21,7 @@ email: rahul27@qq.com
 github: rahul-thakoor # username
 twitter: 
 linkedin: 
-stackoverflow: username   #e.g: users/2735833/proton1h1
+stackoverflow: 
 #Comment out if you don't want disqus 
 disqus: username
 google_analytics: 
