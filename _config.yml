@@ -23,8 +23,8 @@ twitter:
 linkedin: 
 stackoverflow: 
 #Comment out if you don't want disqus 
-disqus: username
-google_analytics: 
+disqus: rahulthakoor
+#google_analytics: 
 
 
 # needed for travis-ci build
