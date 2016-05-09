@@ -13,9 +13,9 @@ safe: true
 # edit here to achieve your personal greatness
 url: http://rahul-thakoor.github.io/
 baseurl: 
-title: Rahul Thakoor
-author: Rahul Thakoor
-description: Personal blog and resume
+title: Rahul
+author: Rahul
+description: Personal blog
 avatar: profile.png
 email: rahul27@qq.com
 github: rahul-thakoor # username
