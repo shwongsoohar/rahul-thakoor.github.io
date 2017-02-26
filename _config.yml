@@ -18,9 +18,9 @@ resume-url: https://google.com/?q=my+resume
 
 url: http://rahul-thakoor@github.io
 # your url: http://USERNAME.github.io
-
+site.url: https://rahul-thakoor.github.io/
 permalink: /:title/
-base_url: http://rahul-thakoor.github.io/
+
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
@@ -98,4 +98,4 @@ gems:
   - jekyll-gist
 
 jekyll-mentions:
-    base_url: https://rahul-thakoor.github.io/
+    base_url: github.io
