@@ -19,7 +19,8 @@ resume-url: https://google.com/?q=my+resume
 url: http://rahul-thakoor@github.io
 # your url: http://USERNAME.github.io
 
-permalink: http://rahul-thakoor.github.io/
+permalink: /:title/
+base_url: http://rahul-thakoor.github.io/
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
