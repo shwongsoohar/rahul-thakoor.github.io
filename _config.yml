@@ -98,4 +98,4 @@ gems:
   - jekyll-gist
 
 jekyll-mentions:
-    base_url: github.io
+    base_url: https://rahul-thakoor.github.io/
