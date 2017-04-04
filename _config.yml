@@ -54,8 +54,7 @@ email: rahul27@qq.com
 authors:
     rahul:
         name: Rahul Thakoor
-        bio: Rahul is a medical graduate who is now a computer science student. 
-              He is passionate about technology and its possibilities. 
+        bio: Rahul is always looking for new challenges and has too many interests to be listed in a few lines.
         external-image: false
         picture: assets/images/profile.png
         #twitter: johndoe
@@ -70,7 +69,7 @@ width: normal
 # paginate_path: "blog/:num/"
 
 # if you don't need projects, comment the *projects* configs below
-projects: true
+#projects: true
 
 # if you don't need "about" or "blog", comment them out below
 about: true
@@ -97,6 +96,7 @@ animation: true
 gems:
   - jekyll-seo-tag
   - jekyll-gist
+  - jekyll-mentions
 
 jekyll-mentions:
-    base_url: 
+    base_url: https://twitter.com
