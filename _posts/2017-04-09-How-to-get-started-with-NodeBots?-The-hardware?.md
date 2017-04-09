@@ -18,7 +18,7 @@ author: rahul
 externalLink: false
 ---
 
-When it comes to starting a DIY Electronics project, one can be overwhelmed by the myriad of choices. First you have to choose a board, then you have to choose sensors and actuators for your project. With so many varieties out there, how to get started?
+When it comes to starting a DIY Electronics project, one can be overwhelmed by the myriad of choices. With so many varieties out there, how to get started?
 
 The basic components include: Processing, Input/Output, Circuits and Wiring and Power.
 
