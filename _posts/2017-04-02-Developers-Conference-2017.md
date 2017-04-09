@@ -12,7 +12,7 @@ tag:
 image: https://secure.meetupstatic.com/photos/event/a/e/a/8/global_262604712.jpeg
 headerImage: true
 projects: false
-hidden: true # don't count this post in blog pagination
+hidden: false # don't count this post in blog pagination
 description: Presenting NodeBots at the Developers Conference
 #jemoji:
 category: blog
