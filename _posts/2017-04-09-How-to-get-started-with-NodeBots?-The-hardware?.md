@@ -7,11 +7,11 @@ tag:
 - Johnny-Five
 - Maker
 - DIY
-image: https://cdn.pixabay.com/photo/2014/09/10/23/47/integrated-circuit-441294_960_720.jpg
+image: /assets/images/getting_started_hardware/arduino.jpg
 headerImage: false
 projects: false
 hidden: false # don't count this post in blog pagination
-description: A beginner's guide to buying hardware necessary for a NodeBots project
+description: A beginner's guide to getting hardware for NodeBots projects
 #jemoji:
 category: blog
 author: rahul
@@ -32,7 +32,7 @@ The basic components include: Processing, Input/Output, Circuits and Wiring and 
 
 
 
-   ![Components](https://cdn.pixabay.com/photo/2017/03/23/12/27/arduino-2168180_960_720.png)
+   ![Components](/assets/images/getting_started_hardware/components.png)
 
 ## Finding the right board
 <a href="http://makezine.com/comparison/boards/" target="_blank">The Maker's Guide to Boards</a> is a good starting point for comparing different boards based on price, software compatibility, usage recommendations and other options. 
@@ -62,6 +62,8 @@ available for $5 and $10 respectively, are without a doubt the boards to buy if 
 
 The Tessel 2 ($44.45) is a development board with on-board WiFi capabilities that allows you to build scripts in Node.js. The Tessel provides you with a connected hardware prototyping system that can be used in multiple different applications. The Johnny-Five Inventor's Kit, from Bocoup and SparkFun, includes a Tessel 2, and everything else you need to do 14 experiments! 
 
+Any board compatible with the Johnny-five framework is good to get started with nodebots.
+Please refer to the <a href="http://johnny-five.io/platform-support/" target="_blank">platform support</a> for Johnny-five.
 
 ## Parts
 Once you have decided on the board, you need to get some input and output components to interface with the physical world. Again, there are so many components. 
@@ -82,7 +84,7 @@ The best way to get started is to buy a beginner's kit such as [Sparkfun's colle
 
 5.  A 5V, 1A power plug or charger with a USB cable for powering projects when prototyping.             Afterwards you can include batteries in your projects. 
 
-### A shopping list
+## A shopping list
 Most common components based on different starter kits such as the [Arduino Starter Kit](https://store.arduino.cc/product/GKX00007), [Sparkfun's Inventor's Kit](https://www.sparkfun.com/products/retired/12060) and the [Johnny-Five Inventor's Kit](https://www.sparkfun.com/products/13847). 
 
 * A development board
@@ -111,9 +113,9 @@ Cool to have:
 * Ultrasonic distance sensor
 * Shift Register
 
-Most of these parts are available for cheap on Aliexpress! __Pro Tip__: add the "breakout" or "module" in your search queries. These components will be breadboard friendly, sometimes already including resistors or capacitors. Just plug & play!
+All of these parts are available for cheap on Aliexpress! __Pro Tip__: add the "breakout" or "module" in your search queries. These components will be breadboard friendly, sometimes already including resistors or capacitors. Just plug & play!
 
-<a href="https://www.facebook.com/DMElectronicsMRU/" target="_blank">DM Electronics</a> also has these components.
+<a href="https://www.facebook.com/DMElectronicsMRU/" target="_blank">DM Electronics</a> also has most of these components.
      
 
 
