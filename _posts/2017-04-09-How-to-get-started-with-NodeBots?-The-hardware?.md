@@ -7,7 +7,7 @@ tag:
 - Johnny-Five
 - Maker
 - DIY
-image: https://secure.meetupstatic.com/photos/event/a/e/a/8/global_262604712.jpeg
+image: https://cdn.pixabay.com/photo/2014/09/10/23/47/integrated-circuit-441294_960_720.jpg
 headerImage: false
 projects: false
 hidden: false # don't count this post in blog pagination
