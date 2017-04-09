@@ -11,7 +11,7 @@ image: https://cdn.pixabay.com/photo/2014/09/10/23/47/integrated-circuit-441294_
 headerImage: false
 projects: false
 hidden: false # don't count this post in blog pagination
-description: A beginner's guide to getting started with NodeBots
+description: A beginner's guide to buying hardware necessary for a NodeBots project
 #jemoji:
 category: blog
 author: rahul
