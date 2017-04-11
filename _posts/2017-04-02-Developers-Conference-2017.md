@@ -1,21 +1,21 @@
 ---
 title: Developers Conference 2017
-layout: post
-date: 2017-04-02 08:37
-tag: 
+date: 2017-04-02 08:37:00 Z
+categories:
+- blog
+tags:
 - DevConMru
 - MSPMauritius
 - NodeBots
 - Johnny-Five
 - Maker
 - MSCC
+layout: post
 image: https://secure.meetupstatic.com/photos/event/a/e/a/8/global_262604712.jpeg
 headerImage: true
 projects: false
-hidden: false # don't count this post in blog pagination
+hidden: false
 description: Presenting NodeBots at the Developers Conference
-#jemoji:
-category: blog
 author: rahul
 externalLink: false
 ---

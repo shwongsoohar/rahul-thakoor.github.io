@@ -1,8 +1,8 @@
 ---
 title: About
 layout: page
-published: true
 ---
+
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
 <p>Hello World! I am Rahul Thakoor. I have always been very passionate about technology. Despite being in medical school, I self-taught myself some programming and hardware skills. After completing my medical degree, I decided to study computer science.</p>

@@ -1,19 +1,19 @@
 ---
-title: "How to get started with NodeBots? - The hardware"
-layout: post
-date: 2017-04-09 08:37
-tag: 
+title: How to get started with NodeBots? - The hardware
+date: 2017-04-09 08:37:00 Z
+categories:
+- blog
+tags:
 - NodeBots
 - Johnny-Five
 - Maker
 - DIY
-image: /assets/images/getting_started_hardware/arduino.jpg
+layout: post
+image: "/assets/images/getting_started_hardware/arduino.jpg"
 headerImage: false
 projects: false
-hidden: false # don't count this post in blog pagination
+hidden: false
 description: A beginner's guide to getting hardware for NodeBots projects
-#jemoji:
-category: blog
 author: rahul
 externalLink: false
 ---
