@@ -22,7 +22,7 @@ externalLink: false
 ## What is Arduino?
 Arduino is an open-source electronics prototyping platform. An Arduino board is development hardware consisting of a programmable microcontroller. The boards can collect information(inputs), act on the inputs(processing) and finally produce outputs. Typically, Arduino boards are programmed using the Arduino programming language through the Arduino IDE using custom firmware(sketches). Arduino exists in many forms and flavours, from the official boards such as the UNO, ArduinoBoard 101 and MEGA, to Arduino-compatible ones like the NodeMCU.
 
-![Components](https://github.com/rahul-thakoor/kws/raw/master/firmata%20on%20arduino/firmata%20protocol.jpg)
+![Components](https://github.com/rahul-thakoor/kws/raw/master/firmata%20on%20arduino/arduino.jpg)
 
 
    
