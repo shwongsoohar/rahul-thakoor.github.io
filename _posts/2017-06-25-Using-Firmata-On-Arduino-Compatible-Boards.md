@@ -1,20 +1,20 @@
 ---
-title: "Using Firmata On Arduino Compatible Boards"
-layout: post
-date: 2017-06-25 08:12
-tag: 
+title: Using Firmata On Arduino Compatible Boards
+date: 2017-06-25 08:12:00 +04:00
+categories:
+- blog
+tags:
 - NodeBots
 - Johnny-Five
 - Maker
 - DIY
 - Firmata
+layout: post
 image: https://github.com/rahul-thakoor/kws/raw/master/firmata%20on%20arduino/firmata%20protocol.jpg
 headerImage: false
 projects: false
-hidden: false # don't count this post in blog pagination
+hidden: false
 description: Using Firmata On Arduino Compatible Boards
-#jemoji:
-category: blog
 author: rahul
 externalLink: false
 ---
